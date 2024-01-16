@@ -1,0 +1,51 @@
+nav{
+    color: #fff !important;
+}
+nav .btn-success{
+    background: var(--bs-success) !important;
+}
+.main_img{
+    width: 100% ;
+    height: 300px;
+}
+
+.img_text{
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    color: #fff;
+    background-color: midnightblue;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 35px;
+}
+aside ul{
+    background-color:lightblue;
+    width:16%;
+    height:100%;
+    position:fixed;
+    padding-top: 5%;
+    text-align: center;
+}
+aside ul li{
+    list-style: none;
+    padding-bottom: 30px;
+    font-size: 15px;
+}
+aside ul li a{
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+aside ul li a:hover{
+    color: red;
+    text-decoration: none;
+}
+.content{
+    margin-left: 20%;
+    margin-top: 5%;
+}
+.table_td{
+    text-align: center;
+    padding: 20px;
+}
