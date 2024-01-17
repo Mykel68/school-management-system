@@ -2,6 +2,14 @@
 
 session_start();
 
+
+$host="localhost";
+$user="root";
+$password="";
+$db="school";
+
+$data=mysqli_connect($host,$user,$password,$db);
+
     if(!isset($_SESSION['username']))
     {
         header("location:login.php");
@@ -10,7 +18,7 @@ session_start();
     {
         header("location:login.php");
     }
-    require_once('config.php');
+
 
     $id=$_GET['student_id'];
     $sql="SELECT * FROM user WHERE id='$id' ";
@@ -22,7 +30,7 @@ session_start();
     {
         $name=$_POST['name'];
         $email=$_POST['email'];
-        $phone=$_POST['phonee'];
+        $phone=$_POST['phone'];
         $password=$_POST['password'];
 
         $query="UPDATE user SET username='$name', email='$email', phone='$phone', password='$password' WHERE id='$id' ";
@@ -64,13 +72,13 @@ session_start();
             </div>
             <div class="form-group">
               <label for="">Email</label>
-              <input type="text"
+              <input type="email"
                 class="form-control" name="email" id="" aria-describedby="helpId" placeholder=""
                 value="<?php echo "{$info['email']}"; ?>">
             </div>
             <div class="form-group">
               <label for="">Phone</label>
-              <input type="text"
+              <input type="number"
                 class="form-control" name="phone" id="" aria-describedby="helpId" placeholder=""
                 value="<?php echo "{$info['phone']}"; ?>">
             </div>

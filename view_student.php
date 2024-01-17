@@ -73,7 +73,7 @@ error_reporting(0);
             <?php echo  "<a class='btn btn-danger' onclick='return confirm(\"Are you sure to delete this?\")' href='delete.php?student_id={$info['id']}'>Delete</a>"
             ?></td> 
 
-            <td class='table_td'><?php echo  "<a class='btn btn-primary' href='update_student.php?student_id={$info['id']}'>Update</a>" ?></td>
+            <td class='table_td'><?php echo  "<a class='btn btn-primary' href='update_student.php?student_id={$info['id']}'>Update</a>"; ?></td>
         </tr>
         <?php
         }

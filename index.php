@@ -11,6 +11,11 @@
         alert('$message')
         </script>";
     }
+    
+    require_once('config.php');
+    $sql="SELECT * FROM teacher";
+    $result=mysqli_query($data,$sql);
+
 
 ?>
 
@@ -58,7 +63,7 @@
         <img src="images/banner1.jpg" class='main_img' alt="">
     </div>
 
-    <div class="container">
+    <!-- <div class="container">
         <div class="row">
             <div class="col-md-6">
                 <img src="images/banner.jpg" alt="">
@@ -68,9 +73,30 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, mollitia, similique perspiciatis est facilis ullam quam repudiandae odit non officia vero minus officiis itaque sint nisi delectus possimus cum atque quae necessitatibus. Omnis corporis, ullam laborum quaerat ipsum, quasi blanditiis cumque tempore optio ad consequatur maiores exercitationem a illo nesciunt!</p>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <div class="container">
+        <div class="row">
+            <?php
+
+            while($info=$result->fetch_assoc())
+            {
+            ?>
+
+            <div class="col-sm-4">
+                <img src="<?php echo "{$info['image']}" ?>" alt="" style="height:200px;width:200px;">
+                <h3><?php echo "{$info['name']}" ?></h3>
+
+                <h5><?php echo "{$info['description']}" ?></h5>
+            </div>
+
+            <?php
+            }
+            ?>
+        </div>
+    </div>
+
+    <div class="container mt-5">
         <form action="data_check.php" method="POST">
             <div class="form-group">
               <label for="">Name</label>

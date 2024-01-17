@@ -11,8 +11,7 @@ session_start();
         header("location:login.php");
     }
     include_once('config.php');
-    $data=mysqli_connect($host,$user,$password,$db);
-
+    
     $name=$_SESSION['username'];
     $sql="SELECT * FROM user WHERE username='$name' ";
     $result = mysqli_query($data, $sql);
@@ -72,29 +71,23 @@ session_start();
     <div class='content'>
     <h1>Student Profile</h1>
     <p>Username: <?php echo $info['username']; ?></p>
-    <form action="" method="POST">
-        <div class="form-group">
-          <label for="">Name</label>
-          <input type="text"
-            class="form-control" name="" id="" aria-describedby="helpId" placeholder=""
-            value="<?php echo "{$info['username']}"; ?>">
-        </div>
+    <form action="#" method="POST">
         <div class="form-group">
           <label for="">Email</label>
           <input type="email"
-            class="form-control" name="" id="" aria-describedby="helpId" placeholder=""
+            class="form-control" name="email" id="" aria-describedby="helpId" placeholder=""
             value="<?php echo "{$info['email']}"; ?>">
         </div>
         <div class="form-group">
           <label for="">Phone</label>
           <input type="number"
-            class="form-control" name="" id="" aria-describedby="helpId" placeholder=""
+            class="form-control" name="phone" id="" aria-describedby="helpId" placeholder=""
             value="<?php echo "{$info['phone']}"; ?>">
         </div>
         <div class="form-group">
           <label for="">Password</label>
           <input type="text"
-            class="form-control" name="" id="" aria-describedby="helpId" placeholder=""
+            class="form-control" name="password" id="" aria-describedby="helpId" placeholder=""
             value="<?php echo "{$info['password']}"; ?>">
         </div>
         <div class="mt-2">
